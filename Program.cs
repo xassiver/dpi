@@ -63,6 +63,15 @@ namespace DPIA
                                 "   sasirtir. Veri trafiğinizi izlemez veya yavaslatmaz.\n" +
                                 "3. Oyunlarda MS (Ping) artisina veya FPS dususune neden olmaz.\n" +
                                 "4. Arka planda calismasinin sebebi, size kesintisiz bir deneyim sunmaktir.";
+                T["ExpertDnsMenu"] = "\n--- DNS SECIMI ---";
+                T["DnsCloudflare"] = "1. Cloudflare DNS (1.1.1.1)";
+                T["DnsGoogle"] = "2. Google DNS (8.8.8.8)";
+                T["DnsYandex"] = "3. Yandex DNS (77.88.8.8)";
+                T["DnsAdGuard"] = "4. AdGuard DNS (94.140.14.14)";
+                T["DnsCustom"] = "5. Ozel DNS Gir";
+                T["DnsNoChange"] = "0. Varsayilan (Yandex)";
+                T["DnsChoicePrompt"] = "DNS Seciminiz: ";
+                T["CustomDnsInput"] = "DNS IP Adresi: ";
             } else {
                 T["StatusTitle"] = "DPIA STATUS: ";
                 T["Installed"] = "INSTALLED AND RUNNING";
@@ -86,13 +95,22 @@ namespace DPIA
                                 "   It does not monitor or throttle your data.\n" +
                                 "3. It won't cause Ping spikes or FPS drops in games.\n" +
                                 "4. It runs in the background to provide a seamless experience.";
+                T["ExpertDnsMenu"] = "\n--- DNS SELECTION ---";
+                T["DnsCloudflare"] = "1. Cloudflare DNS (1.1.1.1)";
+                T["DnsGoogle"] = "2. Google DNS (8.8.8.8)";
+                T["DnsYandex"] = "3. Yandex DNS (77.88.8.8)";
+                T["DnsAdGuard"] = "4. AdGuard DNS (94.140.14.14)";
+                T["DnsCustom"] = "5. Enter Custom DNS";
+                T["DnsNoChange"] = "0. Default (Yandex)";
+                T["DnsChoicePrompt"] = "DNS Choice: ";
+                T["CustomDnsInput"] = "DNS IP Address: ";
             }
         }
 
         static void Main(string[] args)
         {
             InitLang();
-            Console.Title = "DPIA - Open Source DPI Assistant";
+            Console.Title = "DPIA v1.1 - Open Source DPI Assistant";
 
             while (true)
             {
@@ -220,13 +238,34 @@ namespace DPIA
             string ttl = Console.ReadLine();
             if (string.IsNullOrEmpty(ttl)) ttl = "5";
 
-            Console.Write("DNS Yonlendirme acilsin mi? (E/H - Onerilen: E): ");
-            string dnsChoice = Console.ReadLine().ToLower();
-            bool useDns = (dnsChoice == "e" || dnsChoice == "y" || string.IsNullOrEmpty(dnsChoice));
+            Console.WriteLine(T["ExpertDnsMenu"]);
+            Console.WriteLine(T["DnsCloudflare"]);
+            Console.WriteLine(T["DnsGoogle"]);
+            Console.WriteLine(T["DnsYandex"]);
+            Console.WriteLine(T["DnsAdGuard"]);
+            Console.WriteLine(T["DnsCustom"]);
+            Console.WriteLine(T["DnsNoChange"]);
+            Console.Write(T["DnsChoicePrompt"]);
+            
+            string dnsChoice = Console.ReadLine();
+            string dnsAddr = "77.88.8.8";
+
+            switch (dnsChoice)
+            {
+                case "1": dnsAddr = "1.1.1.1"; break;
+                case "2": dnsAddr = "8.8.8.8"; break;
+                case "3": dnsAddr = "77.88.8.8"; break;
+                case "4": dnsAddr = "94.140.14.14"; break;
+                case "5":
+                    Console.Write(T["CustomDnsInput"]);
+                    string custom = Console.ReadLine();
+                    if (!string.IsNullOrEmpty(custom)) dnsAddr = custom;
+                    break;
+                default: dnsAddr = "77.88.8.8"; break;
+            }
 
             Cleanup();
-            string args = "-5 --set-ttl " + ttl;
-            if (useDns) args += " --dns-addr 77.88.8.8 --dns-port 1253";
+            string args = "-5 --set-ttl " + ttl + " --dns-addr " + dnsAddr + " --dns-port 1253";
 
             InstallService(args);
             Console.ForegroundColor = ConsoleColor.Green;
