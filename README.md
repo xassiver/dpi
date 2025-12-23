@@ -3,6 +3,7 @@
 [![Downloads](https://img.shields.io/github/downloads/cagritaskn/GoodbyeDPI-Turkey/total.svg)](https://github.com/cagritaskn/GoodbyeDPI-Turkey/releases/)
 
 # DPIA - Dynamic DPI Assistant 🚀
+[Download/Yükle](https://github.com/xassiver/dpi/releases/tag/APP)
 
 [Turkish](#türkçe) | [English](#english)
 
