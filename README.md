@@ -1,4 +1,5 @@
 # DPIA - Dynamic DPI Assistant 🚀
+[Download/Yükle](https://github.com/xassiver/dpi/releases/tag/APP)
 
 [Turkish](#türkçe) | [English](#english)
 
