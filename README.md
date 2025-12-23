@@ -1,9 +1,9 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
-[![Downloads](https://img.shields.io/github/downloads/cagritaskn/GoodbyeDPI-Turkey/total.svg)](https://github.com/cagritaskn/GoodbyeDPI-Turkey/releases/)
+![Downloads](https://img.shields.io/github/downloads/xassiver/dpi/total)
+![GitHub Repo stars](https://img.shields.io/github/stars/xassiver/dpi)
 
 # DPIA - Dynamic DPI Assistant 🚀
-[Download/Yükle](https://github.com/xassiver/dpi/releases/tag/APP)
 
 [Turkish](#türkçe) | [English](#english)
 
@@ -76,7 +76,7 @@ DPIA is a user-friendly and intelligent Windows terminal application designed to
 
 DPIA is an open-source tool. It works by installing a background service that intelligently manipulates packet headers.
 
-- **Source Code:** [Program.cs](file:///c:/Users/Orhan/Desktop/Programlar/PROJELER/DPIA/Program.cs)
-- **Build Script:** [BUILD.bat](file:///c:/Users/Orhan/Desktop/Programlar/PROJELER/DPIA/BUILD.bat)
+- **Source Code:** Program.cs
+- **Build Script:** BUILD.bat
 
 *DPIA is a standalone project focused on internet freedom.*
