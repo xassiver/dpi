@@ -1,3 +1,7 @@
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)](https://www.microsoft.com/windows)
+[![Downloads](https://img.shields.io/github/downloads/cagritaskn/GoodbyeDPI-Turkey/total.svg)](https://github.com/cagritaskn/GoodbyeDPI-Turkey/releases/)
+
 # DPIA - Dynamic DPI Assistant 🚀
 
 [Turkish](#türkçe) | [English](#english)
@@ -25,6 +29,27 @@ DPIA, internet sansürünü ve derin paket inceleme (DPI) engellerini aşmak iç
 
 ---
 
+# Kaspersky Antivirüsü Hakkında Önemli Not
+>
+> [!CAUTION]
+> Kaspersky antivirüs yazılımı, GoodbyeDPI çekirdeğinin çalışmasına engel olmaktadır. Kaspersky kullanıyorsanız, devre dışı bırakmanız veya dışlamalara eklemeniz çoğu zaman yeterli olmaz; yazılımı tamamen kaldırmanız gerekebilir. Alternatif olarak Windows Defender kullanabilirsiniz.
+
+## Virüs & Veri Sızıntısı & Bitcoin Mining
+
+DPIA açık kaynak kodludur. Bazı antivirüs yazılımları, paket yakalama ve manipülasyon için kullanılan `WinDivert.dll` ve `WinDivert64.sys` dosyalarını "zararlı" olarak işaretleyebilir (False Positive). Bu dosyalar paket başlıklarını değiştirmek için sisteme düşük seviyeli erişim sağlar.
+
+> [!IMPORTANT]
+> WinDivert dosyalarının açıklamalarında görünen Bitcoin adresi, kütüphanenin asıl geliştiricisi olan [basil00](https://github.com/basil00)'a ait bağış adresidir. Bu uygulama ile herhangi bir veri sızıntısı veya mining söz konusu değildir.
+
+## Sık Karşılaşılan Sorunlar
+
+- **WinDivert dosyaları bulunamadı hatası:** Antivirüs programınız dosyaları silmiş olabilir. DPIA klasörünü antivirüsünüzde "Dışlamalar/İstisnalar" listesine ekleyin.
+- **Servis başlatılamadı hatası:** DPIA'yı mutlaka **Yönetici Olarak** çalıştırdığınızdan emin olun.
+- **Siteler yavaş açılıyor veya açılmıyor:** İteratif kurulumda farklı profilleri deneyin. Özellikle Superonline Fiber kullanıcıları Expert Mode'da (Seçenek 2) farklı TTL değerleri (3, 4 veya 5) denemelidir.
+- **Discord Bağlantı Sorunu:** Discord uygulaması açılmıyorsa, web üzerinden giriş yapmayı deneyin. Eğer webde sorun yoksa ancak uygulamada varsa, arka planda çalışan diğer WinDivert kullanan uygulamaları kapatın.
+
+---
+
 ## English
 
 DPIA is a user-friendly and intelligent Windows terminal application designed to bypass internet censorship and Deep Packet Inspection (DPI) blocks. It liberates your internet connection in seconds, requiring zero technical knowledge.
@@ -46,12 +71,11 @@ DPIA is a user-friendly and intelligent Windows terminal application designed to
 
 ---
 
-### 💻 Developer Information (Açıklama)
+### 💻 Developer Information
 
-DPIA is open source. You can find the full source code in `Program.cs`. To build the executable yourself, you can use the provided `BUILD.bat` script.
+DPIA is an open-source tool. It works by installing a background service that intelligently manipulates packet headers.
 
-DPIA açık kaynaklıdır. Tüm kaynak kodlarını `Program.cs` dosyasında bulabilirsiniz. EXE dosyasını kendiniz derlemek isterseniz `BUILD.bat` dosyasını kullanabilirsiniz.
+- **Source Code:** [Program.cs](file:///c:/Users/Orhan/Desktop/Programlar/PROJELER/DPIA/Program.cs)
+- **Build Script:** [BUILD.bat](file:///c:/Users/Orhan/Desktop/Programlar/PROJELER/DPIA/BUILD.bat)
 
----
 *DPIA is a standalone project focused on internet freedom.*
-*DPIA, internet özgürlüğüne odaklanmış bağımsız bir projedir.*
